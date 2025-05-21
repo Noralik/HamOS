@@ -7,7 +7,7 @@ body {
   font-family: system-ui, sans-serif;
   color: black;
   background-color: white;
-  background-image: url("walKafka.png");
+  background-image: url("wallpaper.jpg");
 }
 
 nav {
@@ -46,9 +46,21 @@ h1 {
   font-size: 1.5rem;
 }
 
-.specter {
+.images {
   width: 150px;
+  display: inline-block;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 5%;
 }
-.specter img{
+.images img{
   width: 100%;
+}
+.images .specter{
+  z-index: -1;
+  position: absolute;
+  width: 60%;
+  top: 20px ;
+  left: 20%;
+  transition: 0.2s;
 }
