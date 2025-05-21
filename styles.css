@@ -46,9 +46,9 @@ h1 {
   font-size: 1.5rem;
 }
 
-img {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  transition: 0.2s;
+.specter {
+  width: 150px;
+}
+.specter img{
+  width: 100%;
 }
