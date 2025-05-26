@@ -1,70 +1,68 @@
-// Получаем ссылки на элементы формы по их ID
-const addBtn = document.querySelector('#addBtn'); // Кнопка "Добавить"
-const foodNameInput = document.querySelector('#food-text-input'); // Поле ввода названия блюда
-const foodFileInput = document.querySelector('#food-file-input'); // Поле загрузки изображения
-const ratingSelect = document.querySelector('#food-rating-select'); // Выпадающий список для выбора рейтинга
-const foodItems = document.querySelector('#food-list'); // Контейнер для добавленных блюд
+const addBtn = document.querySelector('#addBtn');
+const foodNameInput = document.querySelector('#food-text-input');
+const foodFileInput = document.querySelector('#food-file-input');
+const ratingSelect = document.querySelector('#food-rating-select');
+const foodItems = document.querySelector('#food-list');
 
-// Добавляем обработчик события "клик" на кнопку добавления
 addBtn.addEventListener('click', function (event) {
-  event.preventDefault(); // Отменяем стандартное поведение кнопки (например, отправку формы)
+  event.preventDefault();
 
-  // Получаем значения из полей ввода
-  const foodNameValue = foodNameInput.value.trim(); // Название блюда без лишних пробелов
-  const file = foodFileInput.files[0]; // Выбранный файл (изображение)
-  const ratingValue = ratingSelect.value; // Значение рейтинга
+  const foodNameValue = foodNameInput.value.trim();
+  const file = foodFileInput.files[0];
+  const ratingValue = ratingSelect.value;
 
-  // Проверяем, все ли поля заполнены
   if (!foodNameValue || !file || !ratingValue) {
-    alert('Пожалуйста, заполните все поля и выберите рейтинг'); // Сообщение об ошибке
-    return; // Прерываем выполнение функции, если есть незаполненные поля
+    alert('Пожалуйста, заполните все поля и выберите рейтинг');
+    return;
   }
 
-  // Создаем объект FileReader для чтения содержимого файла
   const reader = new FileReader();
 
-  // Задаем, что делать после загрузки файла
   reader.onload = function (e) {
-    // Создаем основной контейнер для нового элемента блюда
     const newDiv = document.createElement('div');
-    newDiv.classList.add('food-item'); // Добавляем класс для стилизации
+    newDiv.classList.add('food-item');
 
-    // Создаем элемент изображения
     const newImg = document.createElement('img');
-    newImg.src = e.target.result; // Устанавливаем изображение из загруженного файла
-    newImg.alt = foodNameValue; // Альтернативный текст - название блюда
+    newImg.src = e.target.result;
+    newImg.alt = foodNameValue;
 
-    // Создаем контейнер для текста (название и рейтинг)
     const infoDiv = document.createElement('div');
 
-    // Элемент с названием блюда
     const newName = document.createElement('p');
     newName.classList.add('food-name');
     newName.innerText = foodNameValue;
 
-    // Элемент с рейтингом
-    const newRating = document.createElement('p');
-    newRating.classList.add('food-rating');
-    // Формируем строку с рейтингом: звезды + числовое значение
-    newRating.innerText = '⭐ '.repeat(ratingValue).trim() + ` ${ratingValue}/5`;
+    const userRating = document.createElement('p');
+    userRating.classList.add('food-rating');
+    userRating.innerText = 'Your rating: ' + '⭐ '.repeat(ratingValue).trim() + ` ${ratingValue}/5`;
 
-    // Добавляем название и рейтинг в контейнер infoDiv
+    const communityRatingValue = Math.floor(Math.random() * 5) + 1;
+    const communityRating = document.createElement('p');
+    communityRating.classList.add('food-rating');
+    communityRating.innerText = 'Community rating: ' + '⭐ '.repeat(communityRatingValue).trim() + ` ${communityRatingValue}/5`;
+
+    // 🔴 Кнопка удаления
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerText = '🗑 Удалить';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.addEventListener('click', () => {
+      foodItems.removeChild(newDiv);
+    });
+
     infoDiv.appendChild(newName);
-    infoDiv.appendChild(newRating);
+    infoDiv.appendChild(userRating);
+    infoDiv.appendChild(communityRating);
+    infoDiv.appendChild(deleteBtn);
 
-    // Добавляем изображение и текстовый блок в основной контейнер
     newDiv.appendChild(newImg);
     newDiv.appendChild(infoDiv);
 
-    // Добавляем весь новый элемент на страницу (в список блюд)
     foodItems.appendChild(newDiv);
 
-    // Очищаем форму после добавления
     foodNameInput.value = '';
     foodFileInput.value = '';
     ratingSelect.value = '';
   };
 
-  // Читаем файл как Data URL (для использования в src изображения)
   reader.readAsDataURL(file);
 });
