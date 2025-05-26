@@ -198,3 +198,21 @@ label {
     background-color: rgba(255, 255, 255, 0.9);
     color: #000;
 }
+
+.delete-btn {
+    background: linear-gradient(90deg, rgba(255, 71, 87, 1) 0%, rgba(255, 118, 117, 1) 50%, rgba(255, 195, 113, 1) 100%);
+    color: white;
+    font-weight: bold;
+    border: 2px solid darkred;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: linear-gradient(90deg, rgba(255, 0, 98, 1) 0%, rgba(255, 87, 51, 1) 50%, rgba(255, 195, 113, 1) 100%);
+    transform: scale(1.05);
+}
