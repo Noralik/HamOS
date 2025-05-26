@@ -10,15 +10,25 @@
   <div class="food-container">
     <div class="food-add-container">
       <form id="food-form">
-        <label for="food-input">Your favourite food</label>
+        <label for="food-text-input">Your favourite food</label>
         <input
           type="text"
-          id="food-input"
-          name="food"
+          id="food-text-input"
+          name="food-text"
           placeholder="e.g. Pizza"
           required
         />
-        <button type="submit">ADD</button>
+
+        <label for="food-file-input" class="file-label">Upload food photo</label>
+        <input
+          type="file"
+          id="food-file-input"
+          name="food-file"
+          accept="image/*"
+          required
+        />
+
+        <button id="addBtn" type="submit">ADD</button>
       </form>
     </div>
 

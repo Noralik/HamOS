@@ -35,7 +35,7 @@ body {
     backdrop-filter: blur(5px);
 }
 
-/* Инпут */
+/* Текстовый инпут */
 .food-add-container input[type="text"] {
     width: 100%;
     max-width: 360px;
@@ -54,6 +54,29 @@ body {
 .food-add-container input[type="text"]:focus {
     border-color: #ff69b4;
     background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Поле выбора файла - скрываем дефолтный */
+.food-add-container input[type="file"] {
+    display: none;
+}
+
+/* Кастомный лейбл для файла */
+.food-add-container label.file-label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, rgba(212, 21, 196, 1) 0%, rgba(199, 87, 124, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    user-select: none;
+    transition: background 0.3s ease;
+}
+
+.food-add-container label.file-label:hover {
+    background: linear-gradient(90deg, rgba(21, 183, 212, 1) 0%, rgba(30, 123, 189, 1) 50%, rgba(83, 237, 121, 1) 100%);
 }
 
 /* Подписи */
@@ -87,7 +110,6 @@ label {
 }
 
 /* Список еды */
-/* Контейнер для всех продуктов */
 .food-items {
     max-width: 360px;
     margin: 20px auto 0;
@@ -100,7 +122,6 @@ label {
     gap: 12px;
 }
 
-/* Один элемент продукта */
 .food-item {
     display: flex;
     align-items: center;
@@ -112,7 +133,6 @@ label {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
 }
 
-/* Картинка еды */
 .food-item img {
     width: 50px;
     height: 50px;
@@ -120,13 +140,11 @@ label {
     object-fit: cover;
 }
 
-/* Текст внутри элемента */
 .food-item p {
     margin: 2px 0;
     line-height: 1.2;
 }
 
-/* Анимация при появлении */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
