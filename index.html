@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Ahri Food List</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Ahri Food List</title> <!-- Заголовок вкладки браузера -->
+  <meta charset="UTF-8" /> <!-- Установка кодировки символов -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Адаптивность на мобильных -->
+  <link rel="stylesheet" href="styles.css" /> <!-- Подключение внешнего CSS -->
 </head>
 <body>
+  <!-- Главный контейнер для всей страницы -->
   <div class="food-container">
+
+    <!-- Блок формы добавления нового блюда -->
     <div class="food-add-container">
       <form id="food-form">
+        <!-- Поле для ввода названия блюда -->
         <label for="food-text-input">Your favourite food</label>
         <input
           type="text"
@@ -19,7 +23,9 @@
           required
         />
 
+        <!-- Лейбл, стилизованный как кнопка, для выбора файла -->
         <label for="food-file-input" class="file-label">Upload food photo</label>
+        <!-- Скрытое поле для загрузки изображения -->
         <input
           type="file"
           id="food-file-input"
@@ -28,21 +34,37 @@
           required
         />
 
+        <!-- Выпадающий список для выбора рейтинга -->
+        <label for="food-rating-select">Your rating</label>
+        <select id="food-rating-select" name="food-rating" required>
+            <option value="" disabled selected>Выберите рейтинг</option>
+            <option value="1">⭐ 1/5</option>
+            <option value="2">⭐ 2/5</option>
+            <option value="3">⭐ 3/5</option>
+            <option value="4">⭐ 4/5</option>
+            <option value="5">⭐ 5/5</option>
+        </select>
+
+        <!-- Кнопка для добавления новой еды -->
         <button id="addBtn" type="submit">ADD</button>
       </form>
     </div>
 
+    <!-- Список добавленных блюд -->
     <div class="food-items" id="food-list">
+      <!-- Пример одного блюда (по умолчанию) -->
       <div class="food-item">
-        <img src="tango.avif" alt="Placeholder food" />
+        <img src="tango.avif" alt="Placeholder food" /> <!-- Изображение блюда -->
         <div>
-          <p class="food-name">tango</p>
-          <p class="food-rating">⭐ 5/5</p>
+          <p class="food-name">tango</p> <!-- Название блюда -->
+          <p class="food-rating">⭐ 5/5</p> <!-- Рейтинг блюда -->
         </div>
       </div>
     </div>
+
   </div>
 
+  <!-- Подключение JavaScript-файла с логикой -->
   <script src="script.js"></script>
 </body>
 </html>
