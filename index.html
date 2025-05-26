@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ahri Food List</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="food-container">
+    <div class="food-add-container">
+      <form id="food-form">
+        <label for="food-input">Your favourite food</label>
+        <input
+          type="text"
+          id="food-input"
+          name="food"
+          placeholder="e.g. Pizza"
+          required
+        />
+        <button type="submit">ADD</button>
+      </form>
+    </div>
+
+    <div class="food-items" id="food-list">
+      <div class="food-item">
+        <img src="https://via.placeholder.com/60" alt="Placeholder food" />
+        <div>
+          <p class="food-name">Example Food</p>
+          <p class="food-rating">⭐ 5/5</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
