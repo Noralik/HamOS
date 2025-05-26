@@ -1,41 +1,40 @@
-/* Основной стиль body */
 body {
     margin: 0;
     padding: 0;
-    width: 100vw; /* Занимает всю ширину окна */
-    height: 100vh; /* Занимает всю высоту окна */
-    display: flex; /* Используем Flexbox */
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: start; /* Выравнивание элементов сверху по вертикали */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
     font-family: Arial, sans-serif;
-    background-image: url("..."); /* Фоновое изображение */
-    background-color: darkmagenta; /* Цвет фона на случай, если картинка не загрузится */
+    background-image: url("Spirit-Blossom-Ahri-Rose-Quartz-Chroma-Skin-League-of-Legends-4K-Wallpaper.jpg");
+    background-color: darkmagenta;
     background-repeat: no-repeat;
-    background-size: cover; /* Растягиваем изображение на весь экран */
+    background-size: cover;
     background-position: center;
-    overflow-y: auto; /* Разрешаем вертикальную прокрутку при необходимости */
+    overflow-y: auto;
 }
 
-/* Контейнер, оборачивающий всё содержимое */
+/* Контейнер */
 .food-container {
     width: 100%;
     padding: 20px;
-    box-sizing: border-box; /* Учитываем padding в ширине */
+    box-sizing: border-box;
 }
 
-/* Контейнер формы добавления еды */
+/* Форма */
 .food-add-container {
-    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
-    border: 2px dashed darkmagenta; /* Пунктирная рамка */
-    border-radius: 15px; /* Скругленные углы */
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px dashed darkmagenta;
+    border-radius: 15px;
     padding: 15px 20px;
-    max-width: 400px; /* Максимальная ширина */
-    margin: 0 auto; /* Центрируем по горизонтали */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Тень */
-    backdrop-filter: blur(5px); /* Размытие фона позади блока */
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
 }
 
-/* Текстовое поле ввода названия еды */
+/* Текстовый инпут */
 .food-add-container input[type="text"] {
     width: 100%;
     max-width: 360px;
@@ -51,37 +50,35 @@ body {
     display: block;
 }
 
-/* Стили при фокусе на текстовом поле */
 .food-add-container input[type="text"]:focus {
     border-color: #ff69b4;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Скрываем стандартное поле загрузки файла */
+/* Поле выбора файла - скрываем дефолтный */
 .food-add-container input[type="file"] {
     display: none;
 }
 
-/* Кастомный лейбл, который выглядит как кнопка загрузки файла */
+/* Кастомный лейбл для файла */
 .food-add-container label.file-label {
     display: inline-block;
     cursor: pointer;
     padding: 10px 20px;
-    background: linear-gradient(90deg, rgba(...)...); /* Градиентный фон */
+    background: linear-gradient(90deg, rgba(212, 21, 196, 1) 0%, rgba(199, 87, 124, 1) 50%, rgba(237, 221, 83, 1) 100%);
     border-radius: 20px;
     color: white;
     font-weight: bold;
     margin-top: 10px;
-    user-select: none; /* Запрет на выделение текста */
+    user-select: none;
     transition: background 0.3s ease;
 }
 
-/* Ховер-эффект для кнопки загрузки файла */
 .food-add-container label.file-label:hover {
-    background: linear-gradient(90deg, rgba(...)...); /* Изменяем градиент */
+    background: linear-gradient(90deg, rgba(21, 183, 212, 1) 0%, rgba(30, 123, 189, 1) 50%, rgba(83, 237, 121, 1) 100%);
 }
 
-/* Стили для всех подписей */
+/* Подписи */
 label {
     display: block;
     color: white;
@@ -90,7 +87,7 @@ label {
     font-size: 14px;
 }
 
-/* Кнопка "Добавить" */
+/* Кнопка */
 .food-add-container button {
     display: block;
     width: 100%;
@@ -98,7 +95,7 @@ label {
     padding: 12px 20px;
     font-size: 16px;
     color: white;
-    background: linear-gradient(90deg, rgba(...)...);
+    background: linear-gradient(90deg, rgba(212, 21, 196, 1) 0%, rgba(199, 87, 124, 1) 50%, rgba(237, 221, 83, 1) 100%);
     border: 2px solid darkmagenta;
     border-radius: 20px;
     cursor: pointer;
@@ -106,26 +103,24 @@ label {
     margin: 10px auto 0;
 }
 
-/* Эффект при наведении на кнопку */
 .food-add-container button:hover {
-    background: linear-gradient(90deg, rgba(...)...);
-    transform: scale(1.05); /* Легкое увеличение */
+    background: linear-gradient(90deg, rgba(21, 183, 212, 1) 0%, rgba(30, 123, 189, 1) 50%, rgba(83, 237, 121, 1) 100%);
+    transform: scale(1.05);
 }
 
-/* Контейнер со списком добавленных блюд */
+/* Список еды */
 .food-items {
     max-width: 360px;
     margin: 20px auto 0;
     padding: 15px 20px;
-    background-color: rgba(238, 130, 238, 0.15); /* Светло-фиолетовый фон */
+    background-color: rgba(238, 130, 238, 0.15);
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Расстояние между элементами */
+    gap: 12px;
 }
 
-/* Отдельный элемент еды */
 .food-item {
     display: flex;
     align-items: center;
@@ -137,27 +132,24 @@ label {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
 }
 
-/* Изображение еды */
 .food-item img {
     width: 50px;
     height: 50px;
     border-radius: 8px;
-    object-fit: cover; /* Обрезка изображения под размер */
+    object-fit: cover;
 }
 
-/* Описание блюда */
 .food-item p {
     margin: 2px 0;
     line-height: 1.2;
 }
 
-/* Анимация появления (можно применять через JS) */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Адаптивность для маленьких экранов */
+/* Адаптив */
 @media screen and (max-width: 480px) {
     .food-add-container, .food-items {
         width: 95%;
@@ -179,7 +171,7 @@ label {
     }
 }
 
-/* Стили для выпадающего списка рейтинга */
+/* Стили для селектора рейтинга */
 #food-rating-select {
     width: 100%;
     max-width: 360px;
@@ -189,21 +181,19 @@ label {
     border: 2px solid darkmagenta;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.5);
-    color: #000;
+    color: #000; /* чёрный текст */
     outline: none;
     transition: border 0.2s ease, background-color 0.3s ease;
     display: block;
     cursor: pointer;
 }
 
-/* Эффект фокуса на селекте */
 #food-rating-select:focus {
     border-color: #ff69b4;
     background-color: rgba(255, 255, 255, 0.8);
     color: #000;
 }
 
-/* Стили для опций внутри селекта */
 #food-rating-select option {
     background-color: rgba(255, 255, 255, 0.9);
     color: #000;
