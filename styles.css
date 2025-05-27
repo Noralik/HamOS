@@ -1,0 +1,9 @@
+img {
+  width: 50px;
+  position: absolute;
+  transition: 0.2s;
+}
+
+body {
+  transition: 0.2s;
+}
