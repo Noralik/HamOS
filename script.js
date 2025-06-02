@@ -30,7 +30,7 @@ const createBox = (number, parentElem, states, isComputer) => {
   for (let i = 0; i < number; i++) {
     states.push(false);
     const gameBlock = document.createElement('div');
-    gameBlock.classList.add('block');
+    gameBlock.classList.add('block', "playerBlock");
     if (!isComputer) {
       gameBlock.addEventListener('click', function () {
         if (playerShips < 3 && shipSet[i] != true) {
@@ -47,9 +47,11 @@ const createBox = (number, parentElem, states, isComputer) => {
         }
         computerShipSet[i] = true;
         let computerSelectedShip = randomFunction(0, 12);
-        if(userShips.includes(computerSelectedShip)) {
-            gameBlock.src = 'brokenship.jpg';
-            userShips.slice(userShips.indexOf(computerSelectedShip), 1)
+        console.log(userShips, computerSelectedShip);
+        if (userShips.includes(computerSelectedShip)) {
+          const playerBlocks = document.querySelectorAll('.playerBlock');
+          playerBlocks[computerSelectedShip].children[0].src = 'brokenship.jpg';
+          userShips.splice(userShips.indexOf(computerSelectedShip), 1);
         }
       });
     }
