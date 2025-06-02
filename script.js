@@ -42,7 +42,7 @@ const createBox = (number, parentElem, states, isComputer) => {
       });
     } else {
       gameBlock.addEventListener('click', function () {
-        if (shipSet[i] != true && computerShips.includes(i)) {
+        if (computerShipSet[i] != true && computerShips.includes(i)) {
           createImg('111160871.png', gameBlock);
         }
         computerShipSet[i] = true;
